@@ -1,0 +1,27 @@
+#!/bin/bash
+yum update -y
+yum -y install httpd
+systemctl enable httpd
+systemctl start httpd
+
+# Create an HTML file with colored home page
+echo '<html>
+<head>
+<style>
+body {
+  background-color: lightblue;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  text-shadow: 2px 2px 4px #000000;
+}
+</style>
+</head>
+<body>
+  <h1>Hello World!</h1>
+</body>
+</html>' > /var/www/html/index.html
